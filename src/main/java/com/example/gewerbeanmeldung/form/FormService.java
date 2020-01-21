@@ -47,6 +47,17 @@ public class FormService {
 			System.out.println("test"+ questionService.existsQuestionByFormType(oldFormtype));
 			deleteForm(oldForm);
 		}	
+		
+		List<Form> formList = new ArrayList<>();
+		formRepo.findAll().forEach(formList::add);
+
+		for(int i = 0; i < formList.size(); i++){
+			if(newForm.getFormname().equals(formList.get(i).getFormname())){
+				return "edited successful";
+			}
+		}
+		
+		
 		addForm(newForm);	
 		return "edited successful";
 	}
