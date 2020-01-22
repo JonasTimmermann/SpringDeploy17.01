@@ -39,7 +39,7 @@ public class Question {
 	
 	private Integer lookbackId = 0;
 
-	@Column(length=1000)
+	@Column(length=1500)
 	private String hint;
 	
 	@NotNull
