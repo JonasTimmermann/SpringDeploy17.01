@@ -94,11 +94,13 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers("/forms/{form_id}/question/{question_id}/answers/{answers_id}/edit").permitAll().antMatchers("/forms/{form_id}/question/{question_id}/answers").permitAll()
 		.antMatchers("/forms/{form_id}/answers/all/delete").permitAll().antMatchers("/forms/{form_id}/answers/all/add").permitAll()
 		.antMatchers("/forms/{form_id}/answers/all/edit").permitAll().antMatchers("/form/{form_id}/category/{category_id}/findstart").permitAll()
-		.antMatchers("/findAllStarts").permitAll()
+		.antMatchers("/findAllStarts").permitAll().antMatchers("/uploadFile/filled/{form_id}/question/{question_id}").permitAll()
+		.antMatchers("/uploadMultipleFiles/filled/{form_id}/question/{question_id}").permitAll()
+		.antMatchers("/uploadFile/{id}/filled/{form_id}/question/{question_id}/update").permitAll()
 		//.antMatchers("/api/v1/basicauth").permitAll()
 		.anyRequest()
-				.authenticated().and()
-				.httpBasic();
+		.authenticated().and()
+		.httpBasic();
 	}
 	
 	
