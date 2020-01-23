@@ -24,7 +24,7 @@ public class Starting {
 	@Column(unique = true)
 	private Integer questionId;
 	
-	@Column(length=2000)
+	@Column(length=4000)
 	private String startText;
 	
 	public Starting() {
